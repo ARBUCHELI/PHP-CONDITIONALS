@@ -1,0 +1,101 @@
+# BOOLEANS AND COMPARISON OPERATORS
+-----------------------------------
+
+* Introduction
+--------------
+Have you ever noticed that hyperlinks change color after you click them? If the link has been clicked, then the web browser renders it in purple, rather than blue. The programming concept 
+that makes this possible is called conditionals.
+
+This might be a simple example, but conditionals underlie the complex behavior of computer programs from Gmail, to Mario games, to Microsoft Office. Conditionals make it possible for 
+programs to decide how to react to a wide variety of situations.
+
+But computers aren’t intelligent—in order for them to make decisions they have to be programmed with a set of rules to follow.
+
+In this lesson, we’ll explore how we write programs that can make decisions with conditionals.
+
+===================================================================================================================================================================
+
+* If Statements
+---------------
+We’re going to learn about a specific type of conditional called an if statement. An if statement follows this basic structure:
+
+if (/*some condition*/) {
+ // Do something...
+}
+ 
+The parentheses hold the condition we want the computer to check. If the condition is true, the code inside the code block ({ }) will run; if it’s not true, the code will not run.
+
+The foundation of any conditional is the boolean data type. A boolean can have one of two values: TRUE or FALSE. Note that these are the words without quotation marks—the string "TRUE" is 
+not the same as the boolean value TRUE. These values are not case sensitive, but we follow the convention of making them uppercase.
+
+If we wanted to write code to approximate our hyperlink example from the previous exercise, we might write something like this:
+
+$is_clicked = TRUE;
+if ($is_clicked) {
+  $link_color = "purple";
+  echo $link_color;
+}
+ 
+In the code above, we ask the computer to check the $is_clicked variable as the condition. If its value is TRUE, the value of $link_color will be assigned "purple" and printed.
+
+In the code above, were our condition not met, we’d skip over the code turning the link purple, but what should we do instead? If the link has been clicked, the color should be purple, 
+otherwise it should be blue. We can include a block of code to run when the condition is not met with the keyword else:
+
+$is_clicked = FALSE;
+if ($is_clicked) {
+  $link_color = "purple";
+  echo $link_color;
+} else {
+  $link_color = "blue";
+  echo $link_color;
+}
+ 
+We changed the value of $is_clicked to FALSE so that the if block will not run. Rather, the else block will run and blue will be printed to the terminal.
+
+Let’s make some conditionals!
+
+index.php
+---------
+<?php
+namespace Codecademy;
+function markAnswer($is_correct) {
+  if ($is_correct) {
+    return "green";
+  } else {
+    return "red";
+  }
+}
+
+echo markAnswer(TRUE);
+echo "\n";
+echo markAnswer(FALSE);
+
+==================================================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
