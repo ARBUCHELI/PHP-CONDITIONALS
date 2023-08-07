@@ -484,6 +484,65 @@ echo returnSeason("September");
 
 ==================================================================================================================================================================
 
+* Ternary Operator
+------------------
+PHP offers a short-hand syntax to conditionally return a value. Before learning it, let’s consider some example code:
+
+$isClicked = FALSE;
+if ( $isClicked ) {
+  $link_color = "purple";
+} else {
+  $link_color = "blue";
+}
+ 
+In the code above, our condition checks the value of the $isClicked variable. If it’s TRUE we assign $link_color to "purple", otherwise we assign it the value "blue". Our code is somewhat 
+repetitive—the code in each code block is only slightly different.
+
+A ternary operator (?:) is another conditional operator. It takes three operands and returns a value:
+
+	. The first operand is a condition to check. This is followed by a question mark ?.
+
+	. The second operand is an expression to return if the condition is TRUE. This is followed by a colon (:).
+
+	. The third operand is an expression to return if the condition is FALSE.
+
+Let’s see our previous example refactored with the ternary operator:
+
+$isClicked = FALSE;
+$link_color = $isClicked ? "purple" : "blue";
+ 
+The ternary operator allows us to write fewer lines of code while maintaining readability.
+
+Note that code in the expression will be executed, but the intended use of the ternary is to conditionally return a value not to execute code.
+
+Let’s get some practice with the ternary operator!
+
+index.php
+---------
+<?php
+namespace Codecademy;
+
+function ternaryCheckout($number) {
+  return $number <= 12 ? "express lane" : "regular lane";
+}
+
+function ternaryVote($age) {
+  return $age >= 18 ? "yes" : "no";
+}
+
+echo ternaryCheckout(13);
+echo "\n";
+echo ternaryCheckout(12);
+echo "\n";
+echo ternaryCheckout(11);
+echo "\n";
+echo "\n";
+echo ternaryVote(18);
+echo "\n";
+echo ternaryVote(17);
+
+==================================================================================================================================================================
+
 
 
 
