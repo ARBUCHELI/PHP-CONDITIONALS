@@ -2,7 +2,7 @@
 function magic8Ball() {
   echo "Enter your question to our awesome Magic Ball!\n";
   $question = readLine(">> ");
-  echo "Your question is: ${question}\n";
+  echo "Your question is: $question\n";
 
   $choice = rand(0, 19);
   echo "\n";
